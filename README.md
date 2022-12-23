@@ -52,7 +52,9 @@ nullptr. The cread used the shm_recieve() function from the SHMQueue class. This
 assigned to one of the member variables and the data was returned. The cwrite function was
 implemented exactly like cread only the shm_send() function was used instead.
 
-![](Table.PNG)
+<p align="center">
+  <img width="460" height="300" src=Table.PNG>
+</p>
 
 &emsp; There are different ways to approach the idea of getting two processes to share data.
 From the first test, there wasn’t really a huge difference between the IPC methods. The second
