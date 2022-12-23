@@ -69,4 +69,4 @@ list to store data within the kernel. The shared memory has a unique memory loca
 processes will communicate. The shared memory was the fastest one which makes sense since
 the data does not need to go through the kernel which is an efficient way to speed up the
 procedure, unlike FIFO and Message queue. Shared memory itself has an advantage because
-it doesn't make system calls and just relies on memcpy which makes it fast. \
+it doesn't make system calls and just relies on memcpy which makes it fast.\
