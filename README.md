@@ -56,6 +56,8 @@ implemented exactly like cread only the shm_send() function was used instead.
   <img src=Table.PNG>
 </p>
 
+<h2> Discussion </h2>
+
 &emsp; There are different ways to approach the idea of getting two processes to share data.
 From the first test, there wasn’t really a huge difference between the IPC methods. The second
 test on the other hand showed a noticeable difference in time from the IPC methods. My guess
