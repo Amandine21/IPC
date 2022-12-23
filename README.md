@@ -51,3 +51,22 @@ The destructor was implemented by deleting the SHMQueue variables and setting th
 nullptr. The cread used the shm_recieve() function from the SHMQueue class. This was then
 assigned to one of the member variables and the data was returned. The cwrite function was
 implemented exactly like cread only the shm_send() function was used instead.
+
+&emsp; There are different ways to approach the idea of getting two processes to share data.
+From the first test, there wasn’t really a huge difference between the IPC methods. The second
+test on the other hand showed a noticeable difference in time from the IPC methods. My guess
+is due to buffer capacity-sized transfers at a time, some data structures are better at sharing
+large loads at a time compared to others. FIFO is a traditional pipe within Unix which will only
+last as long as the process uses a pipe file to perform the communication. The FIFO is using a
+first in first out approach meaning that the first job will be processed first, and the last job will be
+processed last which will take a considerable amount of time. It is also worth pointing out that
+FIFO not only has to create the file during piping but it also needs to delete the files which will
+take some time. \
+&emsp; The message queue has messages added to a queue but will obtain the messages
+without any particular order. Rather than getting data first in first out, it will get the data based on
+their type which speeds up the time. It's also worth mentioning the message queue uses a link
+list to store data within the kernel. The shared memory has a unique memory location where two
+processes will communicate. The shared memory was the fastest one which makes sense since
+the data does not need to go through the kernel which is an efficient way to speed up the
+procedure, unlike FIFO and Message queue. Shared memory itself has an advantage because
+it doesn't make system calls and just relies on memcpy which makes it fast. \
