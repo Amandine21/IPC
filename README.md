@@ -53,7 +53,7 @@ assigned to one of the member variables and the data was returned. The cwrite fu
 implemented exactly like cread only the shm_send() function was used instead.
 
 <p align="center">
-  <img width="460" height="300" src=Table.PNG>
+  <img src=Table.PNG>
 </p>
 
 &emsp; There are different ways to approach the idea of getting two processes to share data.
